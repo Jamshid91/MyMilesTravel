@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="shortcut icon" href="assets/img/png/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style/plugins/bootstrap5.css">
+    <link rel="stylesheet" href="assets/style/plugins/foundation-datepicker.css"> 
+    <link rel="stylesheet" href="assets/style/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-between">
+                <div class="col-2 d-xl-none d-flex justify-content-start">
+                        <div class="menu-burger d-flex justify-content-between flex-column">
+                            <div class="menu-burger-list" id="burger_list1"></div>
+                            <div class="menu-burger-list" id="burger_list2"></div>
+                            <div class="menu-burger-list" id="burger_list3"></div>
+                        </div>
+                </div>
+                <div class="col-lg-3 col-sm-5 col-6 text-center">
+                    <a href="#">
+                        <svg class="logo" width="204" height="37" viewBox="0 0 204 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.5425 7.66937L26.1503 9.57702L33.4132 4.30225L22.9901 4.60104C22.888 4.60661 22.7891 4.63826 22.7028 4.69297L19.4046 6.58913C19.302 6.64597 19.2188 6.73229 19.1658 6.83692C19.1128 6.94154 19.0924 7.05967 19.1073 7.17601C19.1221 7.29236 19.1715 7.40157 19.2491 7.48952C19.3267 7.57748 19.4289 7.64013 19.5425 7.66937Z" fill="#605DEC"/>
+                            <path d="M52.0298 1.76261L44.7899 0.199713C44.1811 0.0675289 43.5509 0.0678737 42.9421 0.200724C42.3334 0.333575 41.7604 0.595823 41.2619 0.96967L19.3929 16.863L14.1411 16.6331C13.8402 16.6229 13.5438 16.7074 13.2936 16.8748C13.0434 17.0421 12.8521 17.2838 12.7467 17.5657C12.6413 17.8476 12.6271 18.1556 12.7062 18.446C12.7852 18.7364 12.9535 18.9947 13.1872 19.1843L18.3011 23.241C18.3853 23.3089 18.4855 23.354 18.5922 23.3722C18.6988 23.3903 18.8083 23.3807 18.9102 23.3444C20.3697 22.7813 25.8053 19.8968 32.2293 16.3688L33.5164 29.596C33.5273 29.7105 33.5693 29.8199 33.6378 29.9124C33.7064 30.0048 33.7988 30.0768 33.9053 30.1206C34.0117 30.1643 34.1281 30.1782 34.2418 30.1607C34.3555 30.1432 34.4623 30.0949 34.5507 30.0212L37.4236 27.6309C37.5809 27.4989 37.6867 27.3159 37.7224 27.1137L40.446 11.841C45.0428 9.2898 49.4327 6.81904 52.524 5.07227C52.8448 4.89771 53.1042 4.62875 53.267 4.30184C53.4298 3.97492 53.4883 3.60585 53.4343 3.24463C53.3804 2.88341 53.2167 2.5475 52.9655 2.28241C52.7143 2.01731 52.3876 1.83585 52.0298 1.76261Z" fill="#605DEC"/>
+                            <path d="M29.7091 23.1463C29.7091 23.1463 22.2927 30.9613 16.3637 30.4863C12.6446 30.1884 9.11623 29.9859 9.69099 25.8154C10.1253 22.6644 13.0273 22.4791 15.0292 23.8136C18.7405 26.2879 17.9795 33.0952 13.6946 35.1572C9.26422 37.2893 5.12187 34.5479 2.35099 30.4863C0.601678 27.9222 0.958289 24.0981 1.98865 20.4773C3.47274 15.2619 9.02369 11.8027 9.02369 11.8027" stroke="#605DEC" stroke-width="0.526744" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.27 2.63"/>
+                            <path d="M66.2086 8.58V25.5H63.4726V14.316L59.0086 22.764H56.9446L52.4566 14.436L52.4806 25.5H49.7446V8.58H52.1926L58.0006 19.644L63.7846 8.58H66.2086ZM80.7962 13.788L73.7402 29.82H70.7162L72.8522 25.044L67.9562 13.788H71.1242L74.4362 22.068L77.8442 13.788H80.7962ZM99.0211 8.58V25.5H96.2851V14.316L91.8211 22.764H89.7571L85.2691 14.436L85.2931 25.5H82.5571V8.58H85.0051L90.8131 19.644L96.5971 8.58H99.0211ZM102.425 13.764H105.425V25.5H102.425V13.764ZM105.569 8.316V11.268H102.257V8.316H105.569ZM108.518 8.58H111.518V25.5H108.518V8.58ZM124.908 20.172H116.916C117.012 21.26 117.34 22.068 117.9 22.596C118.46 23.124 119.26 23.388 120.3 23.388C121.596 23.388 122.78 22.972 123.852 22.14L124.716 24.204C124.172 24.652 123.484 25.012 122.652 25.284C121.836 25.556 121.012 25.692 120.18 25.692C118.26 25.692 116.74 25.148 115.62 24.06C114.516 22.972 113.964 21.484 113.964 19.596C113.964 18.396 114.204 17.332 114.684 16.404C115.164 15.476 115.836 14.756 116.7 14.244C117.58 13.732 118.572 13.476 119.676 13.476C121.292 13.476 122.564 13.996 123.492 15.036C124.436 16.076 124.908 17.508 124.908 19.332V20.172ZM119.748 15.588C118.948 15.588 118.3 15.844 117.804 16.356C117.324 16.868 117.028 17.604 116.916 18.564H122.34C122.308 17.588 122.068 16.852 121.62 16.356C121.172 15.844 120.548 15.588 119.748 15.588ZM131.682 25.692C130.642 25.692 129.682 25.564 128.802 25.308C127.938 25.052 127.202 24.684 126.594 24.204L127.434 22.116C128.682 23.028 130.114 23.484 131.73 23.484C132.418 23.484 132.938 23.372 133.29 23.148C133.658 22.924 133.842 22.604 133.842 22.188C133.842 21.836 133.714 21.564 133.458 21.372C133.218 21.18 132.778 21.004 132.138 20.844L130.218 20.412C129.13 20.172 128.322 19.78 127.794 19.236C127.266 18.692 127.002 17.988 127.002 17.124C127.002 16.404 127.202 15.772 127.602 15.228C128.018 14.668 128.586 14.236 129.306 13.932C130.042 13.628 130.89 13.476 131.85 13.476C132.682 13.476 133.482 13.604 134.25 13.86C135.034 14.116 135.722 14.476 136.314 14.94L135.474 16.98C134.258 16.1 133.042 15.66 131.826 15.66C131.17 15.66 130.658 15.78 130.29 16.02C129.922 16.26 129.738 16.596 129.738 17.028C129.738 17.348 129.85 17.612 130.074 17.82C130.314 18.028 130.69 18.188 131.202 18.3L133.194 18.756C134.362 19.012 135.218 19.42 135.762 19.98C136.306 20.524 136.578 21.244 136.578 22.14C136.578 23.228 136.138 24.092 135.258 24.732C134.378 25.372 133.186 25.692 131.682 25.692ZM143.259 11.124H137.739V8.58H151.875V11.124H146.355V25.5H143.259V11.124ZM159.582 15.972L157.83 16.14C155.846 16.348 154.854 17.356 154.854 19.164V25.5H151.854V13.764H154.71V15.828C155.318 14.42 156.574 13.652 158.478 13.524L159.39 13.452L159.582 15.972ZM166.035 13.476C167.683 13.476 168.907 13.876 169.707 14.676C170.507 15.476 170.907 16.708 170.907 18.372V25.5H168.051V23.7C167.779 24.324 167.347 24.812 166.755 25.164C166.179 25.516 165.507 25.692 164.739 25.692C163.955 25.692 163.243 25.532 162.603 25.212C161.963 24.892 161.459 24.452 161.091 23.892C160.723 23.332 160.539 22.708 160.539 22.02C160.539 21.156 160.755 20.476 161.187 19.98C161.635 19.484 162.355 19.124 163.347 18.9C164.339 18.676 165.707 18.564 167.451 18.564H168.051V18.012C168.051 17.212 167.875 16.636 167.523 16.284C167.187 15.932 166.619 15.756 165.819 15.756C165.195 15.756 164.539 15.868 163.851 16.092C163.179 16.3 162.515 16.596 161.859 16.98L161.019 14.916C161.675 14.5 162.467 14.156 163.395 13.884C164.323 13.612 165.203 13.476 166.035 13.476ZM165.339 23.532C166.139 23.532 166.787 23.268 167.283 22.74C167.795 22.196 168.051 21.5 168.051 20.652V20.148H167.619C166.547 20.148 165.715 20.196 165.123 20.292C164.531 20.388 164.107 20.556 163.851 20.796C163.595 21.036 163.467 21.364 163.467 21.78C163.467 22.292 163.643 22.716 163.995 23.052C164.347 23.372 164.795 23.532 165.339 23.532ZM185.14 13.788L180.004 25.5H177.388L172.3 13.788H175.468L178.78 22.068L182.188 13.788H185.14ZM196.697 20.172H188.705C188.801 21.26 189.129 22.068 189.689 22.596C190.249 23.124 191.049 23.388 192.089 23.388C193.385 23.388 194.569 22.972 195.641 22.14L196.505 24.204C195.961 24.652 195.273 25.012 194.441 25.284C193.625 25.556 192.801 25.692 191.969 25.692C190.049 25.692 188.529 25.148 187.409 24.06C186.305 22.972 185.753 21.484 185.753 19.596C185.753 18.396 185.993 17.332 186.473 16.404C186.953 15.476 187.625 14.756 188.489 14.244C189.369 13.732 190.361 13.476 191.465 13.476C193.081 13.476 194.353 13.996 195.281 15.036C196.225 16.076 196.697 17.508 196.697 19.332V20.172ZM191.537 15.588C190.737 15.588 190.089 15.844 189.593 16.356C189.113 16.868 188.817 17.604 188.705 18.564H194.129C194.097 17.588 193.857 16.852 193.409 16.356C192.961 15.844 192.337 15.588 191.537 15.588ZM199.151 8.58H202.151V25.5H199.151V8.58Z" fill="#605DEC"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-lg-6 d-none d-xl-flex justify-content-center">
+                    <ul class="d-flex align-items-end">
+                        <li class="header-list"><a href="#" class="header-list__link active">Рейсы</a></li>
+                        <li class="header-list"><a href="#" class="header-list__link">Бизнесс-класс</a></li>
+                        <li class="header-list"><a href="#" class="header-list__link">Статьи</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-3 d-flex align-items-center justify-content-end position-relative">
+                    <div class="header-lang d-flex align-items-center position-relative">
+                        <div class="header-lang-active">
+                            <img src="assets/img/png/russia.png" alt="russia" class="header-lang__png">
+                        </div>
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.84861 0.515625H1.15173C0.920871 0.515625 0.791965 0.759375 0.934934 0.925781L4.78337 5.38828C4.89353 5.51602 5.10564 5.51602 5.21696 5.38828L9.0654 0.925781C9.20837 0.759375 9.07946 0.515625 8.84861 0.515625Z" fill="#06162D"/>
+                        </svg>
+                        <div class="lang-item position-absolute flex-column">
+                            <div class="russia">
+                                <img src="assets/img/png/russia.png" alt="russia">
+                            </div>
+                            <div class="usa mt-1">
+                                <img src="assets/img/png/usa.png" alt="usa">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-user d-none d-xl-flex align-items-center">
+                        <div class="header-user-photo position-relative">
+                            <img src="assets/img/png/user.png" alt="user" class="position-absolute top-0 start-0 w-100 h-100 rounded-circle">
+                        </div>
+                        <div>
+                            <p class="header-user__name">Иван Иванов</p>
+                            <a href="tel:+8-800-1000-800" class="header-user__phone">8-800-1000-800</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="menu-item d-none">
+    </div>
+    <div class="menu-item-box">
+        <div class="menu-item-box-close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </div>
+        <div class="d-flex align-items-center justify-content-start w-100">
+            <div class="header-user-photo position-relative">
+                <img src="assets/img/png/user.png" alt="user" class="position-absolute top-0 start-0 w-100 h-100 rounded-circle">
+            </div>
+            <div>
+                <p class="header-user__name">Иван Иванов</p>
+                <a href="tel:+8-800-1000-800" class="header-user__phone">8-800-1000-800</a>
+            </div>
+        </div>
+        
+        <ul class="d-flex justify-content-center text-center flex-column mt-5">
+            <li class="header-list"><a href="#" class="header-list__link active">Рейсы</a></li>
+            <li class="header-list my-2"><a href="#" class="header-list__link">Бизнесс-класс</a></li>
+            <li class="header-list"><a href="#" class="header-list__link">Статьи</a></li>
+        </ul>
+    </div>
+    <!-- End header -->
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center flex-wrap">
+                    <div class="wrapper-title d-flex align-items-center justify-content-center flex-column">
+                        <p class="wrapper-title__text">Путешествуй за мили</p>
+                        <p class="wrapper-title__text">скидки от 30% - 50%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-12">
+                    <div class="wrapper-info">
+                        <div class="wrapper-info-sup d-flex justify-content-center align-items-sm-center align-items-start flex-wrap">
+                            <label for="rad1">
+                                <input type="radio" id="rad1" name="plane" checked>
+                                <span class="circle"></span>
+                                В одну сторону
+                            </label>
+                            <label for="rad2">
+                                <input type="radio" id="rad2" name="plane">
+                                <span class="circle"></span>
+                                Круговой рейс
+                            </label>
+                            <label for="rad3" class="mt-2 mt-sm-0">
+                                <input type="radio" id="rad3" name="plane">
+                                <span class="circle"></span>
+                                Поездка Туда и Обратно
+                            </label>
+                        </div>
+                        <div class="wrapper-info-sub d-flex align-items-center justify-content-between flex-wrap">
+                            <div class="wrapper-info-item">
+                                <div class="d-flex align-items-center mb-3">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <span class="wrapper-info-item__title">Откуда</span>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <div class="where-flay wrapper-info-item__inp">Город вылета?</div>
+                                    <ul class="where-flay-item wrapper-info-item-box">
+                                        <li class="where-flay-list wrapper-info-item-box__list">SFO</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">ATL</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">LAX</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">STL</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">PVG</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">MSP</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">NRT</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">JFK</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">Label</li>
+                                        <li class="where-flay-list wrapper-info-item-box__list">Label</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wrapper-info-item">
+                                <div class="d-flex align-items-center mb-3">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <span class="wrapper-info-item__title">Куда</span>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <div class="where-flay-from wrapper-info-item__inp">Город прилёта?</div>
+                                    <ul class="where-flay-from-item wrapper-info-item-box">
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">SFO</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">ATL</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">LAX</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">STL</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">PVG</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">MSP</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">NRT</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">JFK</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">Label</li>
+                                        <li class="where-flay-from-list wrapper-info-item-box__list">Label</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wrapper-info-item">
+                                <div class="d-flex align-items-center mb-3">
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.6665 0V1H0.666504V23H22.6665V1H18.6665V0H16.6665V1H6.6665V0H4.6665ZM2.6665 3H4.6665V4H6.6665V3H16.6665V4H18.6665V3H20.6665V5H2.6665V3ZM2.6665 7H20.6665V21H2.6665V7ZM8.6665 9V11H10.6665V9H8.6665ZM12.6665 9V11H14.6665V9H12.6665ZM16.6665 9V11H18.6665V9H16.6665ZM11.6665 12V16H15.6665V12H11.6665ZM4.6665 13V15H6.6665V13H4.6665ZM8.6665 13V15H10.6665V13H8.6665ZM16.6665 13V15H18.6665V13H16.6665ZM4.6665 17V19H6.6665V17H4.6665ZM8.6665 17V19H10.6665V17H8.6665ZM12.6665 17V19H14.6665V17H12.6665Z" fill="#6E7491"/>
+                                    </svg>
+                                    <span class="wrapper-info-item__title">Вылет</span>
+                                </div>
+                                <input class="wrapper-info-item__inp" type="text"  value="ДД/ММ/ГГГ" id="demo-1">
+                            </div>
+                            <div class="wrapper-info-item">
+                                <div class="d-flex align-items-center mb-3">
+                                    <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.13317 5.51998C3.93317 4.66665 3.63984 3.01332 4.47984 1.79998C5.31984 0.599985 6.9865 0.306651 8.19984 1.14665C9.39984 1.99998 9.69317 3.65332 8.85317 4.86665C7.99984 6.06665 6.3465 6.35998 5.13317 5.51998ZM19.3332 23.3333H9.9065C7.93317 23.3333 6.25317 21.8933 5.95984 19.9467L3.33317 7.33332H0.666504L3.31984 20.3467C3.56476 21.9213 4.36457 23.3566 5.57487 24.3933C6.78518 25.43 8.32623 25.9998 9.91984 26H19.3332V23.3333ZM19.6398 18H13.1332L11.7598 12.5333C13.8665 13.72 16.1332 14.5867 18.6265 14.16V11.32C16.4532 11.7333 14.0398 10.96 12.3732 9.65332L10.1865 7.95998C9.87984 7.71998 9.53317 7.55999 9.17317 7.45332C8.74492 7.32699 8.29355 7.29963 7.85317 7.37332H7.8265C7.04135 7.51271 6.34303 7.9566 5.88356 8.60835C5.42408 9.26011 5.24064 10.067 5.37317 10.8533L7.17317 18.7467C7.34904 19.6613 7.83777 20.4862 8.55547 21.0798C9.27318 21.6735 10.1751 21.9988 11.1065 22H20.2398L25.3332 26L27.3332 24L19.6398 18Z" fill="#6E7491"/>
+                                    </svg>
+                                    <span class="wrapper-info-item__title">Класс & Пассажиры</span>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <div class="passenger-class wrapper-info-item__inp"><span class="passenger">1</span> пассажир, <span class="class">эконом</span>-класс</div>
+                                    <div class="passenger-class-item">
+                                        <div class="d-flex">
+                                            <span class="passenger__text">Пассажир:</span>
+                                            <div class="passenger-count d-flex align-items-center">
+                                                <div class="remove">-</div>
+                                                <div class="count">1</div>
+                                                <div class="add">+</div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4 d-flex align-items-center justify-content-between">
+                                            <span class="class__text">Класс:</span>
+                                            <div class="class-item d-flex align-items-center justify-content-between position-relative">
+                                                <span class="class-item__text">Эконом</span>
+                                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8.84861 0.515625H1.15173C0.920871 0.515625 0.791965 0.759375 0.934934 0.925781L4.78337 5.38828C4.89353 5.51602 5.10564 5.51602 5.21696 5.38828L9.0654 0.925781C9.20837 0.759375 9.07946 0.515625 8.84861 0.515625Z" fill="#6E7491"/>
+                                                </svg>
+                                                <ul class="class-item-info position-absolute d-none">
+                                                    <li class="class-item-info__list">Эконом</li>
+                                                    <li class="class-item-info__list">Бизнес</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-info-item-search">
+                                <button class="search">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 18C11.775 17.9996 13.4988 17.4054 14.897 16.312L19.293 20.708L20.707 19.294L16.311 14.898C17.405 13.4997 17.9996 11.7754 18 10C18 5.589 14.411 2 10 2C5.589 2 2 5.589 2 10C2 14.411 5.589 18 10 18ZM10 4C13.309 4 16 6.691 16 10C16 13.309 13.309 16 10 16C6.691 16 4 13.309 4 10C4 6.691 6.691 4 10 4Z" fill="white"/>
+                                        <path d="M11.4118 8.58596C11.7908 8.96596 11.9998 9.46796 11.9998 9.99996H13.9998C14.0007 9.47439 13.8974 8.95386 13.6959 8.46845C13.4944 7.98304 13.1987 7.54239 12.8258 7.17196C11.3118 5.65996 8.68683 5.65996 7.17383 7.17196L8.58583 8.58796C9.34583 7.82996 10.6558 7.83196 11.4118 8.58596Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End wrapper -->
+
+    <div class="cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="title__text">Как это работает</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="cards-item">
+                        <img src="assets/img/png/card1.png" alt="card" class="cards-item__img">
+                        <div class="cards-item-info">
+                            <p class="cards-item__title">1. Скажите нам, <span class="text_col">где и когда</span></p>
+                            <p class="cards-item__text">Дайте нам знать, куда вы хотите поехать и когда. Мы подберем рейс, который соответствует вашим потребностям.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="cards-item">
+                        <img src="assets/img/png/card2.png" alt="card" class="cards-item__img">
+                        <div class="cards-item-info">
+                            <p class="cards-item__title">2. Мы закажем <span class="text_col">ваш рейс</span></p>
+                            <p class="cards-item__text">Как только вы проверите информацию о предлагаемом рейсе, наши специалисты по туризму сделают бронирование от вашего имени.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="cards-item">
+                        <img src="assets/img/png/card3.png" alt="card" class="cards-item__img">
+                        <div class="cards-item-info">
+                            <p class="cards-item__title">3. Наслаждайтесь поездкой <span class="text_col">24/7</span></p>
+                            <p class="cards-item__text">Наш единственный приоритет - сделать ваше путешествие как можно более плавным и сэкономить вам деньги на вашем рейсе.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End cards -->
+
+    <div class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <p class="title__text">Часто задаваемые вопросы</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 col-12 mb-2">
+                    <div class="faq-item">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <p class="faq-item__title">Как купить мили?</p>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2412 8.0825L5.5842 4.4255C5.51111 4.35894 5.45212 4.27839 5.41072 4.18863C5.36931 4.09887 5.34634 4.00171 5.34316 3.90291C5.33997 3.80411 5.35664 3.70568 5.39218 3.61343C5.42772 3.52119 5.4814 3.43702 5.55005 3.36589C5.6187 3.29476 5.70092 3.23813 5.79185 3.19935C5.88277 3.16057 5.98056 3.14043 6.07941 3.14011C6.17826 3.13979 6.27617 3.15931 6.36734 3.19751C6.45851 3.23571 6.5411 3.29181 6.6102 3.3625L6.6282 3.3805L10.8082 7.5595C10.9468 7.69808 11.0246 7.88603 11.0246 8.082C11.0246 8.27797 10.9468 8.46591 10.8082 8.6045L6.6292 12.7835C6.56177 12.8533 6.48125 12.9091 6.39224 12.9478C6.30322 12.9865 6.20747 13.0073 6.11043 13.0089C6.01339 13.0106 5.91698 12.9931 5.82669 12.9575C5.73639 12.922 5.654 12.8689 5.5842 12.8015C5.5144 12.7341 5.45857 12.6535 5.41989 12.5645C5.38121 12.4755 5.36045 12.3798 5.35877 12.2827C5.3571 12.1857 5.37456 12.0893 5.41015 11.999C5.44574 11.9087 5.49877 11.8263 5.5662 11.7565L5.5842 11.7385L9.2412 8.0825Z" fill="#605DEC" stroke="#605DEC" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <p class="faq-item__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur accusantium dolor, alias placeat nulla dicta, culpa nobis blanditiis tempora repellendus molestias asperiores ratione veritatis quis ullam eaque, illum quasi nihil debitis. Facilis nesciunt quia quis rerum, necessitatibus sapiente culpa a.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <p class="faq-item__title">Как купить мили?</p>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2412 8.0825L5.5842 4.4255C5.51111 4.35894 5.45212 4.27839 5.41072 4.18863C5.36931 4.09887 5.34634 4.00171 5.34316 3.90291C5.33997 3.80411 5.35664 3.70568 5.39218 3.61343C5.42772 3.52119 5.4814 3.43702 5.55005 3.36589C5.6187 3.29476 5.70092 3.23813 5.79185 3.19935C5.88277 3.16057 5.98056 3.14043 6.07941 3.14011C6.17826 3.13979 6.27617 3.15931 6.36734 3.19751C6.45851 3.23571 6.5411 3.29181 6.6102 3.3625L6.6282 3.3805L10.8082 7.5595C10.9468 7.69808 11.0246 7.88603 11.0246 8.082C11.0246 8.27797 10.9468 8.46591 10.8082 8.6045L6.6292 12.7835C6.56177 12.8533 6.48125 12.9091 6.39224 12.9478C6.30322 12.9865 6.20747 13.0073 6.11043 13.0089C6.01339 13.0106 5.91698 12.9931 5.82669 12.9575C5.73639 12.922 5.654 12.8689 5.5842 12.8015C5.5144 12.7341 5.45857 12.6535 5.41989 12.5645C5.38121 12.4755 5.36045 12.3798 5.35877 12.2827C5.3571 12.1857 5.37456 12.0893 5.41015 11.999C5.44574 11.9087 5.49877 11.8263 5.5662 11.7565L5.5842 11.7385L9.2412 8.0825Z" fill="#605DEC" stroke="#605DEC" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <p class="faq-item__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur accusantium dolor, alias placeat nulla dicta, culpa nobis blanditiis tempora repellendus molestias asperiores ratione veritatis quis ullam eaque, illum quasi nihil debitis. Facilis nesciunt quia quis rerum, necessitatibus sapiente culpa a.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <p class="faq-item__title">Как купить мили?</p>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2412 8.0825L5.5842 4.4255C5.51111 4.35894 5.45212 4.27839 5.41072 4.18863C5.36931 4.09887 5.34634 4.00171 5.34316 3.90291C5.33997 3.80411 5.35664 3.70568 5.39218 3.61343C5.42772 3.52119 5.4814 3.43702 5.55005 3.36589C5.6187 3.29476 5.70092 3.23813 5.79185 3.19935C5.88277 3.16057 5.98056 3.14043 6.07941 3.14011C6.17826 3.13979 6.27617 3.15931 6.36734 3.19751C6.45851 3.23571 6.5411 3.29181 6.6102 3.3625L6.6282 3.3805L10.8082 7.5595C10.9468 7.69808 11.0246 7.88603 11.0246 8.082C11.0246 8.27797 10.9468 8.46591 10.8082 8.6045L6.6292 12.7835C6.56177 12.8533 6.48125 12.9091 6.39224 12.9478C6.30322 12.9865 6.20747 13.0073 6.11043 13.0089C6.01339 13.0106 5.91698 12.9931 5.82669 12.9575C5.73639 12.922 5.654 12.8689 5.5842 12.8015C5.5144 12.7341 5.45857 12.6535 5.41989 12.5645C5.38121 12.4755 5.36045 12.3798 5.35877 12.2827C5.3571 12.1857 5.37456 12.0893 5.41015 11.999C5.44574 11.9087 5.49877 11.8263 5.5662 11.7565L5.5842 11.7385L9.2412 8.0825Z" fill="#605DEC" stroke="#605DEC" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <p class="faq-item__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur accusantium dolor, alias placeat nulla dicta, culpa nobis blanditiis tempora repellendus molestias asperiores ratione veritatis quis ullam eaque, illum quasi nihil debitis. Facilis nesciunt quia quis rerum, necessitatibus sapiente culpa a.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <p class="faq-item__title">Как купить мили?</p>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2412 8.0825L5.5842 4.4255C5.51111 4.35894 5.45212 4.27839 5.41072 4.18863C5.36931 4.09887 5.34634 4.00171 5.34316 3.90291C5.33997 3.80411 5.35664 3.70568 5.39218 3.61343C5.42772 3.52119 5.4814 3.43702 5.55005 3.36589C5.6187 3.29476 5.70092 3.23813 5.79185 3.19935C5.88277 3.16057 5.98056 3.14043 6.07941 3.14011C6.17826 3.13979 6.27617 3.15931 6.36734 3.19751C6.45851 3.23571 6.5411 3.29181 6.6102 3.3625L6.6282 3.3805L10.8082 7.5595C10.9468 7.69808 11.0246 7.88603 11.0246 8.082C11.0246 8.27797 10.9468 8.46591 10.8082 8.6045L6.6292 12.7835C6.56177 12.8533 6.48125 12.9091 6.39224 12.9478C6.30322 12.9865 6.20747 13.0073 6.11043 13.0089C6.01339 13.0106 5.91698 12.9931 5.82669 12.9575C5.73639 12.922 5.654 12.8689 5.5842 12.8015C5.5144 12.7341 5.45857 12.6535 5.41989 12.5645C5.38121 12.4755 5.36045 12.3798 5.35877 12.2827C5.3571 12.1857 5.37456 12.0893 5.41015 11.999C5.44574 11.9087 5.49877 11.8263 5.5662 11.7565L5.5842 11.7385L9.2412 8.0825Z" fill="#605DEC" stroke="#605DEC" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <p class="faq-item__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur accusantium dolor, alias placeat nulla dicta, culpa nobis blanditiis tempora repellendus molestias asperiores ratione veritatis quis ullam eaque, illum quasi nihil debitis. Facilis nesciunt quia quis rerum, necessitatibus sapiente culpa a.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <p class="faq-item__title">Как купить мили?</p>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2412 8.0825L5.5842 4.4255C5.51111 4.35894 5.45212 4.27839 5.41072 4.18863C5.36931 4.09887 5.34634 4.00171 5.34316 3.90291C5.33997 3.80411 5.35664 3.70568 5.39218 3.61343C5.42772 3.52119 5.4814 3.43702 5.55005 3.36589C5.6187 3.29476 5.70092 3.23813 5.79185 3.19935C5.88277 3.16057 5.98056 3.14043 6.07941 3.14011C6.17826 3.13979 6.27617 3.15931 6.36734 3.19751C6.45851 3.23571 6.5411 3.29181 6.6102 3.3625L6.6282 3.3805L10.8082 7.5595C10.9468 7.69808 11.0246 7.88603 11.0246 8.082C11.0246 8.27797 10.9468 8.46591 10.8082 8.6045L6.6292 12.7835C6.56177 12.8533 6.48125 12.9091 6.39224 12.9478C6.30322 12.9865 6.20747 13.0073 6.11043 13.0089C6.01339 13.0106 5.91698 12.9931 5.82669 12.9575C5.73639 12.922 5.654 12.8689 5.5842 12.8015C5.5144 12.7341 5.45857 12.6535 5.41989 12.5645C5.38121 12.4755 5.36045 12.3798 5.35877 12.2827C5.3571 12.1857 5.37456 12.0893 5.41015 11.999C5.44574 11.9087 5.49877 11.8263 5.5662 11.7565L5.5842 11.7385L9.2412 8.0825Z" fill="#605DEC" stroke="#605DEC" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <p class="faq-item__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur accusantium dolor, alias placeat nulla dicta, culpa nobis blanditiis tempora repellendus molestias asperiores ratione veritatis quis ullam eaque, illum quasi nihil debitis. Facilis nesciunt quia quis rerum, necessitatibus sapiente culpa a.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End faq -->
+
+    <div class="travel">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-between">
+                    <p class="title__text">Куда можно полететь</p>
+                    <div class="open-all d-flex align-items-center">
+                        Все
+                        <svg class="ms-2" width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8.5H20.5M20.5 8.5L13 1M20.5 8.5L13 16" stroke="#A1B0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="travel-item">
+                        <img src="assets/img/png/card4.png" alt="travel" class="travel-item__img">
+                        <div class="travel-item-info d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Минск (BLR)</p>
+                                </div>
+                                <span class="mx-2">-</span>
+                                <div class="d-flex align-items-center">
+                                    <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2388 2.40599L13.0518 2.62499L15.4888 6.594L12.6768 5.75L12.2388 2.40599Z" fill="#6E7491"/>
+                                        <path d="M2.61376 0.624994L3.05176 0.749994L4.64476 4.93799L4.80176 5.406L5.26976 5.531L23.4578 11.156C23.6109 11.1992 23.7537 11.2726 23.878 11.3719C24.0022 11.4712 24.1053 11.5945 24.181 11.7343C24.2568 11.8741 24.3038 12.0278 24.3192 12.1861C24.3346 12.3444 24.3182 12.5042 24.2708 12.656C24.2276 12.8091 24.1542 12.952 24.0549 13.0762C23.9555 13.2004 23.8323 13.3035 23.6925 13.3793C23.5526 13.4551 23.399 13.5021 23.2407 13.5175C23.0824 13.5329 22.9226 13.5164 22.7708 13.469L16.0208 11.437L15.6768 11.344L15.3638 11.469L5.42676 15.625L4.67676 15.312L10.3018 11.437L12.0208 10.25L10.0208 9.656L2.36376 7.344L2.61376 0.624994Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7721 15.4393C17.0534 15.158 17.4349 15 17.8328 15C18.2306 15 18.6121 15.158 18.8934 15.4393C19.1747 15.7206 19.3328 16.1022 19.3328 16.5C19.3328 16.8978 19.1747 17.2794 18.8934 17.5607C18.6121 17.842 18.2306 18 17.8328 18C17.4349 18 17.0534 17.842 16.7721 17.5607C16.4908 17.2794 16.3328 16.8978 16.3328 16.5C16.3328 16.1022 16.4908 15.7206 16.7721 15.4393ZM0.332758 22V20H26.3328V22H0.332758Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Москва (MSC)</p>
+                                </div>
+                            </div>
+                            <p class="travel-item-info__price">40000₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="travel-item">
+                        <img src="assets/img/png/card7.png" alt="travel" class="travel-item__img">
+                        <div class="travel-item-info d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Минск (BLR)</p>
+                                </div>
+                                <span class="mx-2">-</span>
+                                <div class="d-flex align-items-center">
+                                    <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2388 2.40599L13.0518 2.62499L15.4888 6.594L12.6768 5.75L12.2388 2.40599Z" fill="#6E7491"/>
+                                        <path d="M2.61376 0.624994L3.05176 0.749994L4.64476 4.93799L4.80176 5.406L5.26976 5.531L23.4578 11.156C23.6109 11.1992 23.7537 11.2726 23.878 11.3719C24.0022 11.4712 24.1053 11.5945 24.181 11.7343C24.2568 11.8741 24.3038 12.0278 24.3192 12.1861C24.3346 12.3444 24.3182 12.5042 24.2708 12.656C24.2276 12.8091 24.1542 12.952 24.0549 13.0762C23.9555 13.2004 23.8323 13.3035 23.6925 13.3793C23.5526 13.4551 23.399 13.5021 23.2407 13.5175C23.0824 13.5329 22.9226 13.5164 22.7708 13.469L16.0208 11.437L15.6768 11.344L15.3638 11.469L5.42676 15.625L4.67676 15.312L10.3018 11.437L12.0208 10.25L10.0208 9.656L2.36376 7.344L2.61376 0.624994Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7721 15.4393C17.0534 15.158 17.4349 15 17.8328 15C18.2306 15 18.6121 15.158 18.8934 15.4393C19.1747 15.7206 19.3328 16.1022 19.3328 16.5C19.3328 16.8978 19.1747 17.2794 18.8934 17.5607C18.6121 17.842 18.2306 18 17.8328 18C17.4349 18 17.0534 17.842 16.7721 17.5607C16.4908 17.2794 16.3328 16.8978 16.3328 16.5C16.3328 16.1022 16.4908 15.7206 16.7721 15.4393ZM0.332758 22V20H26.3328V22H0.332758Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Москва (MSC)</p>
+                                </div>
+                            </div>
+                            <p class="travel-item-info__price">40000₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="travel-item">
+                        <img src="assets/img/png/card5.png" alt="travel" class="travel-item__img">
+                        <div class="travel-item-info d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Минск (BLR)</p>
+                                </div>
+                                <span class="mx-2">-</span>
+                                <div class="d-flex align-items-center">
+                                    <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2388 2.40599L13.0518 2.62499L15.4888 6.594L12.6768 5.75L12.2388 2.40599Z" fill="#6E7491"/>
+                                        <path d="M2.61376 0.624994L3.05176 0.749994L4.64476 4.93799L4.80176 5.406L5.26976 5.531L23.4578 11.156C23.6109 11.1992 23.7537 11.2726 23.878 11.3719C24.0022 11.4712 24.1053 11.5945 24.181 11.7343C24.2568 11.8741 24.3038 12.0278 24.3192 12.1861C24.3346 12.3444 24.3182 12.5042 24.2708 12.656C24.2276 12.8091 24.1542 12.952 24.0549 13.0762C23.9555 13.2004 23.8323 13.3035 23.6925 13.3793C23.5526 13.4551 23.399 13.5021 23.2407 13.5175C23.0824 13.5329 22.9226 13.5164 22.7708 13.469L16.0208 11.437L15.6768 11.344L15.3638 11.469L5.42676 15.625L4.67676 15.312L10.3018 11.437L12.0208 10.25L10.0208 9.656L2.36376 7.344L2.61376 0.624994Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7721 15.4393C17.0534 15.158 17.4349 15 17.8328 15C18.2306 15 18.6121 15.158 18.8934 15.4393C19.1747 15.7206 19.3328 16.1022 19.3328 16.5C19.3328 16.8978 19.1747 17.2794 18.8934 17.5607C18.6121 17.842 18.2306 18 17.8328 18C17.4349 18 17.0534 17.842 16.7721 17.5607C16.4908 17.2794 16.3328 16.8978 16.3328 16.5C16.3328 16.1022 16.4908 15.7206 16.7721 15.4393ZM0.332758 22V20H26.3328V22H0.332758Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Москва (MSC)</p>
+                                </div>
+                            </div>
+                            <p class="travel-item-info__price">40000₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="travel-item">
+                        <img src="assets/img/png/card6.png" alt="travel" class="travel-item__img">
+                        <div class="travel-item-info d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.239 6.78103C26.364 6.77303 26.493 6.77703 26.614 6.81303C26.8033 6.86581 26.9724 6.97435 27.0991 7.12452C27.2259 7.27469 27.3046 7.45954 27.3249 7.65503C27.3451 7.85051 27.3061 8.04757 27.2129 8.22057C27.1196 8.39357 26.9765 8.5345 26.802 8.62503L21.208 11.656L20.895 11.812L20.77 12.156L17.052 21.094L16.614 21.281L17.677 15.375L18.052 13.344L16.239 14.313L9.92701 17.719L5.95801 13.406L6.11401 13.312L9.77101 14.938L10.239 15.156L10.645 14.906L25.865 6.87503C25.9813 6.81661 26.109 6.78452 26.239 6.78103Z" fill="#6E7491"/>
+                                        <path d="M13.708 8.09403L17.552 9.03103L15.489 10.094L13.239 8.37503L13.708 8.09403Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 28V26H29.333V28H3.33301Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Минск (BLR)</p>
+                                </div>
+                                <span class="mx-2">-</span>
+                                <div class="d-flex align-items-center">
+                                    <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2388 2.40599L13.0518 2.62499L15.4888 6.594L12.6768 5.75L12.2388 2.40599Z" fill="#6E7491"/>
+                                        <path d="M2.61376 0.624994L3.05176 0.749994L4.64476 4.93799L4.80176 5.406L5.26976 5.531L23.4578 11.156C23.6109 11.1992 23.7537 11.2726 23.878 11.3719C24.0022 11.4712 24.1053 11.5945 24.181 11.7343C24.2568 11.8741 24.3038 12.0278 24.3192 12.1861C24.3346 12.3444 24.3182 12.5042 24.2708 12.656C24.2276 12.8091 24.1542 12.952 24.0549 13.0762C23.9555 13.2004 23.8323 13.3035 23.6925 13.3793C23.5526 13.4551 23.399 13.5021 23.2407 13.5175C23.0824 13.5329 22.9226 13.5164 22.7708 13.469L16.0208 11.437L15.6768 11.344L15.3638 11.469L5.42676 15.625L4.67676 15.312L10.3018 11.437L12.0208 10.25L10.0208 9.656L2.36376 7.344L2.61376 0.624994Z" fill="#6E7491"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7721 15.4393C17.0534 15.158 17.4349 15 17.8328 15C18.2306 15 18.6121 15.158 18.8934 15.4393C19.1747 15.7206 19.3328 16.1022 19.3328 16.5C19.3328 16.8978 19.1747 17.2794 18.8934 17.5607C18.6121 17.842 18.2306 18 17.8328 18C17.4349 18 17.0534 17.842 16.7721 17.5607C16.4908 17.2794 16.3328 16.8978 16.3328 16.5C16.3328 16.1022 16.4908 15.7206 16.7721 15.4393ZM0.332758 22V20H26.3328V22H0.332758Z" fill="#6E7491"/>
+                                    </svg>
+                                    <p class="travel-item-info__text ms-1">Москва (MSC)</p>
+                                </div>
+                            </div>
+                            <p class="travel-item-info__price">40000₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End travel -->
+
+    <div class="review">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="title__text">Что говорят пользователи <span class="text_col">MyMilesTravel</span></p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="review-item d-flex align-items-start">
+                        <img src="assets/img/png/avatar.png" alt="avatar" class="review-item__avatar rounded-circle">
+                        <div class="review-item-info ms-3">
+                            <p class="review-item-info__name">Имя Фамилия</p>
+                            <p class="review-item-info__add"><span class="review__add">Россия,Москва</span> | <span class="review__date">Март 2022</span></p>
+                            <div class="review-item-info-stars">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                            </div>
+                            <p class="review-item-info__text">Какой замечательный опыт использования MyMilesTravel! Я забронировала все свои рейсы на год перерыва через MyMilesTravel, и у меня никогда не было никаких проблем. Когда мне пришлось отменить рейс из-за чрезвычайной ситуации, служба поддержки MyMilesTravel помогла мне узнать больше Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.</p>
+                            <span class="read-more">читать больше...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="review-item d-flex align-items-start">
+                        <img src="assets/img/png/avatar2.png" alt="avatar" class="review-item__avatar rounded-circle">
+                        <div class="review-item-info ms-3">
+                            <p class="review-item-info__name">Имя Фамилия</p>
+                            <p class="review-item-info__add"><span class="review__add">Россия,Москва</span> | <span class="review__date">Март 2022</span></p>
+                            <div class="review-item-info-stars">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/start_border.svg" alt="star" class="star">
+                            </div>
+                            <p class="review-item-info__text">Какой замечательный опыт использования MyMilesTravel! Я забронировала все свои рейсы на год перерыва через MyMilesTravel, и у меня никогда не было никаких проблем. Когда мне пришлось отменить рейс из-за чрезвычайной ситуации, служба поддержки MyMilesTravel помогла мне узнать больше Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.</p>
+                            <span class="read-more">читать больше...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="review-item d-flex align-items-start">
+                        <img src="assets/img/png/avatar3.png" alt="avatar" class="review-item__avatar rounded-circle">
+                        <div class="review-item-info ms-3">
+                            <p class="review-item-info__name">Имя Фамилия</p>
+                            <p class="review-item-info__add"><span class="review__add">Россия,Москва</span> | <span class="review__date">Март 2022</span></p>
+                            <div class="review-item-info-stars">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                                <img src="assets/img/svg/star.svg" alt="star" class="star">
+                            </div>
+                            <p class="review-item-info__text">Какой замечательный опыт использования MyMilesTravel! Я забронировала все свои рейсы на год перерыва через MyMilesTravel, и у меня никогда не было никаких проблем. Когда мне пришлось отменить рейс из-за чрезвычайной ситуации, служба поддержки MyMilesTravel помогла мне узнать больше Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.</p>
+                            <span class="read-more">читать больше...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End  review-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-5 px-sm-5 px-2">
+                    <div class="footer-contact w-100 d-flex justify-content-around">
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 6.01262C22.7129 6.4417 22.3882 6.84184 22.0259 7.21304C21.6636 7.58423 21.2705 7.92307 20.8467 8.22956C20.8535 8.32491 20.8586 8.41856 20.8621 8.51051C20.8655 8.60246 20.8672 8.69611 20.8672 8.79146C20.8672 9.64963 20.7749 10.4976 20.5903 11.3353C20.4058 12.1731 20.1392 12.9836 19.7905 13.7668C19.2847 14.9042 18.6523 15.9208 17.8936 16.8164C17.1348 17.712 16.2751 18.4697 15.3147 19.0895C14.3543 19.7093 13.3066 20.1827 12.1719 20.5096C11.0371 20.8365 9.84766 21 8.60351 21C7.42773 21 6.281 20.8382 5.16333 20.5147C4.04565 20.1912 2.99121 19.7093 2 19.0691C2.33496 19.11 2.67676 19.1304 3.02539 19.1304C4.00293 19.1304 4.94799 18.9738 5.86059 18.6605C6.77319 18.3471 7.6123 17.8908 8.37792 17.2915C7.91992 17.2846 7.479 17.208 7.05517 17.0616C6.63134 16.9152 6.2434 16.7108 5.89135 16.4486C5.5393 16.1864 5.23168 15.8748 4.9685 15.5138C4.70531 15.1528 4.50194 14.7544 4.35839 14.3185C4.49511 14.3389 4.63012 14.356 4.76342 14.3696C4.89672 14.3832 5.03173 14.39 5.16845 14.39C5.55126 14.39 5.92723 14.3389 6.29638 14.2368C5.79052 14.1346 5.32739 13.9541 4.90698 13.6953C4.48657 13.4365 4.12255 13.1215 3.81493 12.7503C3.50732 12.3791 3.26806 11.9602 3.09716 11.4937C2.92626 11.0271 2.84081 10.5385 2.84081 10.0276V9.97656C3.44238 10.3171 4.09521 10.4976 4.79931 10.518C4.49853 10.3137 4.23022 10.0804 3.99438 9.81821C3.75854 9.55599 3.55859 9.27163 3.39453 8.96514C3.23046 8.65865 3.104 8.33514 3.01513 7.99459C2.92626 7.65405 2.88183 7.30329 2.88183 6.94231C2.88183 6.5609 2.92968 6.188 3.02538 5.82362C3.12109 5.45924 3.26806 5.11358 3.4663 4.78666C4.01318 5.46094 4.62158 6.06541 5.2915 6.60006C5.96142 7.13472 6.67407 7.59275 7.42944 7.97416C8.18481 8.35557 8.97607 8.65695 9.80321 8.87831C10.6304 9.09966 11.478 9.23077 12.3462 9.27164C12.3052 9.11498 12.2761 8.95323 12.259 8.78636C12.2419 8.61949 12.2334 8.45433 12.2334 8.29087C12.2334 7.69832 12.3462 7.14153 12.5718 6.62049C12.7974 6.09946 13.105 5.64483 13.4946 5.25661C13.8843 4.86839 14.3406 4.5619 14.8635 4.33714C15.3865 4.11238 15.9453 4 16.54 4C17.1416 4 17.7141 4.11749 18.2576 4.35246C18.801 4.58744 19.2778 4.92288 19.688 5.35877C20.1733 5.26342 20.6433 5.1289 21.0979 4.95523C21.5525 4.78155 21.9917 4.56871 22.4155 4.31671C22.2583 4.8139 22.0173 5.26683 21.6926 5.67548C21.3679 6.08413 20.98 6.42127 20.5288 6.6869C21.3901 6.58474 22.2139 6.35998 23 6.01262L23 6.01262Z" fill="#6E7491"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 6.45455C0.25 3.04033 3.04033 0.25 6.45455 0.25H15.5455C18.9597 0.25 21.75 3.04033 21.75 6.45455V15.5455C21.75 18.9597 18.9597 21.75 15.5455 21.75H6.45455C3.04033 21.75 0.25 18.9597 0.25 15.5455V6.45455ZM6.45455 1.75C3.86876 1.75 1.75 3.86876 1.75 6.45455V15.5455C1.75 18.1312 3.86876 20.25 6.45455 20.25H15.5455C18.1312 20.25 20.25 18.1312 20.25 15.5455V6.45455C20.25 3.86876 18.1312 1.75 15.5455 1.75H6.45455ZM11 14.5C12.933 14.5 14.5 12.933 14.5 11C14.5 9.067 12.933 7.5 11 7.5C9.067 7.5 7.5 9.067 7.5 11C7.5 12.933 9.067 14.5 11 14.5ZM11 16C13.7614 16 16 13.7614 16 11C16 8.23858 13.7614 6 11 6C8.23858 6 6 8.23858 6 11C6 13.7614 8.23858 16 11 16ZM16 6C16.5523 6 17 5.55228 17 5C17 4.44771 16.5523 4 16 4C15.4477 4 15 4.44771 15 5C15 5.55228 15.4477 6 16 6Z" fill="#6E7491"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0524 3H3.94765C3.70178 3.0166 3.47027 3.12177 3.29602 3.29602C3.12177 3.47027 3.0166 3.70178 3 3.94765V20.0524C3.00139 20.3033 3.10168 20.5435 3.2791 20.7209C3.45651 20.8983 3.69674 20.9986 3.94765 21H12.5686V13.9895H10.2942V11.3372H12.6628V9.34765C12.6118 8.87052 12.6666 8.388 12.8233 7.93447C12.9801 7.48095 13.2349 7.06757 13.5697 6.72379C13.9045 6.38002 14.311 6.1143 14.7602 5.94558C15.2094 5.77685 15.6903 5.70927 16.1686 5.74765C17.1162 5.74765 17.9686 5.84188 18.2524 5.84188V8.30577H16.8314C15.6942 8.30577 15.5047 8.87435 15.5047 9.63247V11.3372H18.1571L17.778 14.0848H15.4105V21H20.0524C20.3033 20.9986 20.5435 20.8983 20.7209 20.7209C20.8983 20.5435 20.9986 20.3033 21 20.0524V3.94765C20.9834 3.70178 20.8782 3.47027 20.704 3.29602C20.5297 3.12177 20.2982 3.0166 20.0524 3V3Z" fill="#6E7491"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-7 text-center">
+                    <a href="#">
+                        <svg class="footer-logo" width="204" height="37" viewBox="0 0 204 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.5425 7.66937L26.1503 9.57702L33.4132 4.30225L22.9901 4.60104C22.888 4.60661 22.7891 4.63826 22.7028 4.69297L19.4046 6.58913C19.302 6.64597 19.2188 6.73229 19.1658 6.83692C19.1128 6.94154 19.0924 7.05967 19.1073 7.17601C19.1221 7.29236 19.1715 7.40157 19.2491 7.48952C19.3267 7.57748 19.4289 7.64013 19.5425 7.66937Z" fill="#605DEC"/>
+                            <path d="M52.0298 1.76261L44.7899 0.199713C44.1811 0.0675289 43.5509 0.0678737 42.9421 0.200724C42.3334 0.333575 41.7604 0.595823 41.2619 0.96967L19.3929 16.863L14.1411 16.6331C13.8402 16.6229 13.5438 16.7074 13.2936 16.8748C13.0434 17.0421 12.8521 17.2838 12.7467 17.5657C12.6413 17.8476 12.6271 18.1556 12.7062 18.446C12.7852 18.7364 12.9535 18.9947 13.1872 19.1843L18.3011 23.241C18.3853 23.3089 18.4855 23.354 18.5922 23.3722C18.6988 23.3903 18.8083 23.3807 18.9102 23.3444C20.3697 22.7813 25.8053 19.8968 32.2293 16.3688L33.5164 29.596C33.5273 29.7105 33.5693 29.8199 33.6378 29.9124C33.7064 30.0048 33.7988 30.0768 33.9053 30.1206C34.0117 30.1643 34.1281 30.1782 34.2418 30.1607C34.3555 30.1432 34.4623 30.0949 34.5507 30.0212L37.4236 27.6309C37.5809 27.4989 37.6867 27.3159 37.7224 27.1137L40.446 11.841C45.0428 9.2898 49.4327 6.81904 52.524 5.07227C52.8448 4.89771 53.1042 4.62875 53.267 4.30184C53.4298 3.97492 53.4883 3.60585 53.4343 3.24463C53.3804 2.88341 53.2167 2.5475 52.9655 2.28241C52.7143 2.01731 52.3876 1.83585 52.0298 1.76261Z" fill="#605DEC"/>
+                            <path d="M29.7091 23.1463C29.7091 23.1463 22.2927 30.9613 16.3637 30.4863C12.6446 30.1884 9.11623 29.9859 9.69099 25.8154C10.1253 22.6644 13.0273 22.4791 15.0292 23.8136C18.7405 26.2879 17.9795 33.0952 13.6946 35.1572C9.26422 37.2893 5.12187 34.5479 2.35099 30.4863C0.601678 27.9222 0.958289 24.0981 1.98865 20.4773C3.47274 15.2619 9.02369 11.8027 9.02369 11.8027" stroke="#605DEC" stroke-width="0.526744" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.27 2.63"/>
+                            <path d="M66.2086 8.58V25.5H63.4726V14.316L59.0086 22.764H56.9446L52.4566 14.436L52.4806 25.5H49.7446V8.58H52.1926L58.0006 19.644L63.7846 8.58H66.2086ZM80.7962 13.788L73.7402 29.82H70.7162L72.8522 25.044L67.9562 13.788H71.1242L74.4362 22.068L77.8442 13.788H80.7962ZM99.0211 8.58V25.5H96.2851V14.316L91.8211 22.764H89.7571L85.2691 14.436L85.2931 25.5H82.5571V8.58H85.0051L90.8131 19.644L96.5971 8.58H99.0211ZM102.425 13.764H105.425V25.5H102.425V13.764ZM105.569 8.316V11.268H102.257V8.316H105.569ZM108.518 8.58H111.518V25.5H108.518V8.58ZM124.908 20.172H116.916C117.012 21.26 117.34 22.068 117.9 22.596C118.46 23.124 119.26 23.388 120.3 23.388C121.596 23.388 122.78 22.972 123.852 22.14L124.716 24.204C124.172 24.652 123.484 25.012 122.652 25.284C121.836 25.556 121.012 25.692 120.18 25.692C118.26 25.692 116.74 25.148 115.62 24.06C114.516 22.972 113.964 21.484 113.964 19.596C113.964 18.396 114.204 17.332 114.684 16.404C115.164 15.476 115.836 14.756 116.7 14.244C117.58 13.732 118.572 13.476 119.676 13.476C121.292 13.476 122.564 13.996 123.492 15.036C124.436 16.076 124.908 17.508 124.908 19.332V20.172ZM119.748 15.588C118.948 15.588 118.3 15.844 117.804 16.356C117.324 16.868 117.028 17.604 116.916 18.564H122.34C122.308 17.588 122.068 16.852 121.62 16.356C121.172 15.844 120.548 15.588 119.748 15.588ZM131.682 25.692C130.642 25.692 129.682 25.564 128.802 25.308C127.938 25.052 127.202 24.684 126.594 24.204L127.434 22.116C128.682 23.028 130.114 23.484 131.73 23.484C132.418 23.484 132.938 23.372 133.29 23.148C133.658 22.924 133.842 22.604 133.842 22.188C133.842 21.836 133.714 21.564 133.458 21.372C133.218 21.18 132.778 21.004 132.138 20.844L130.218 20.412C129.13 20.172 128.322 19.78 127.794 19.236C127.266 18.692 127.002 17.988 127.002 17.124C127.002 16.404 127.202 15.772 127.602 15.228C128.018 14.668 128.586 14.236 129.306 13.932C130.042 13.628 130.89 13.476 131.85 13.476C132.682 13.476 133.482 13.604 134.25 13.86C135.034 14.116 135.722 14.476 136.314 14.94L135.474 16.98C134.258 16.1 133.042 15.66 131.826 15.66C131.17 15.66 130.658 15.78 130.29 16.02C129.922 16.26 129.738 16.596 129.738 17.028C129.738 17.348 129.85 17.612 130.074 17.82C130.314 18.028 130.69 18.188 131.202 18.3L133.194 18.756C134.362 19.012 135.218 19.42 135.762 19.98C136.306 20.524 136.578 21.244 136.578 22.14C136.578 23.228 136.138 24.092 135.258 24.732C134.378 25.372 133.186 25.692 131.682 25.692ZM143.259 11.124H137.739V8.58H151.875V11.124H146.355V25.5H143.259V11.124ZM159.582 15.972L157.83 16.14C155.846 16.348 154.854 17.356 154.854 19.164V25.5H151.854V13.764H154.71V15.828C155.318 14.42 156.574 13.652 158.478 13.524L159.39 13.452L159.582 15.972ZM166.035 13.476C167.683 13.476 168.907 13.876 169.707 14.676C170.507 15.476 170.907 16.708 170.907 18.372V25.5H168.051V23.7C167.779 24.324 167.347 24.812 166.755 25.164C166.179 25.516 165.507 25.692 164.739 25.692C163.955 25.692 163.243 25.532 162.603 25.212C161.963 24.892 161.459 24.452 161.091 23.892C160.723 23.332 160.539 22.708 160.539 22.02C160.539 21.156 160.755 20.476 161.187 19.98C161.635 19.484 162.355 19.124 163.347 18.9C164.339 18.676 165.707 18.564 167.451 18.564H168.051V18.012C168.051 17.212 167.875 16.636 167.523 16.284C167.187 15.932 166.619 15.756 165.819 15.756C165.195 15.756 164.539 15.868 163.851 16.092C163.179 16.3 162.515 16.596 161.859 16.98L161.019 14.916C161.675 14.5 162.467 14.156 163.395 13.884C164.323 13.612 165.203 13.476 166.035 13.476ZM165.339 23.532C166.139 23.532 166.787 23.268 167.283 22.74C167.795 22.196 168.051 21.5 168.051 20.652V20.148H167.619C166.547 20.148 165.715 20.196 165.123 20.292C164.531 20.388 164.107 20.556 163.851 20.796C163.595 21.036 163.467 21.364 163.467 21.78C163.467 22.292 163.643 22.716 163.995 23.052C164.347 23.372 164.795 23.532 165.339 23.532ZM185.14 13.788L180.004 25.5H177.388L172.3 13.788H175.468L178.78 22.068L182.188 13.788H185.14ZM196.697 20.172H188.705C188.801 21.26 189.129 22.068 189.689 22.596C190.249 23.124 191.049 23.388 192.089 23.388C193.385 23.388 194.569 22.972 195.641 22.14L196.505 24.204C195.961 24.652 195.273 25.012 194.441 25.284C193.625 25.556 192.801 25.692 191.969 25.692C190.049 25.692 188.529 25.148 187.409 24.06C186.305 22.972 185.753 21.484 185.753 19.596C185.753 18.396 185.993 17.332 186.473 16.404C186.953 15.476 187.625 14.756 188.489 14.244C189.369 13.732 190.361 13.476 191.465 13.476C193.081 13.476 194.353 13.996 195.281 15.036C196.225 16.076 196.697 17.508 196.697 19.332V20.172ZM191.537 15.588C190.737 15.588 190.089 15.844 189.593 16.356C189.113 16.868 188.817 17.604 188.705 18.564H194.129C194.097 17.588 193.857 16.852 193.409 16.356C192.961 15.844 192.337 15.588 191.537 15.588ZM199.151 8.58H202.151V25.5H199.151V8.58Z" fill="#605DEC"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 text-sm-end text-center mt-sm-0 mt-4">
+                    <span class="footer__text">© 2022 Katy Ladyha</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/plugins/jquery.js"></script>
+    <script src="assets/js/plugins/foundation-datepicker.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
