@@ -1,0 +1,19 @@
+{
+  "name": "mymilestravel",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamshid91/MyMilesTravel.git"
+  },
+  "author": "Jamshid Tojiboyev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamshid91/MyMilesTravel/issues"
+  },
+  "homepage": "https://github.com/Jamshid91/MyMilesTravel#readme"
+}
