@@ -567,11 +567,12 @@
           <div class="modal-content d-flex justify-content-center align-items-center flex-column">
               <p class="modal__title text-center" id="myModalLabel">Оставьте заявку</p>
               <button type="button" class="btn-close position-absolute d-md-none" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <form action="" class="modal-form  d-flex justify-content-center align-items-center flex-column">
-                        <input type="text" class="modal-form__inp" placeholder="Имя" required>
-                        <input type="email" class="modal-form__inp" placeholder="Мессенджер" required>
-                        <textarea name="message" class="modal-form__text" placeholder="Заявка" required></textarea>
-                        <button type="submit" class="modal-form__btn">Отправить</button>
+                    <form action="" id="form" class="modal-form  d-flex justify-content-center align-items-center flex-column">
+                        <input type="text" id="userName" class="modal-form__inp" placeholder="Имя" required>
+                        <input type="email" id="userEmail" class="modal-form__inp" placeholder="Мессенджер" required>
+                        <textarea name="message" id="message" class="modal-form__text" placeholder="Заявка" required></textarea>
+                        <small class="error mb-2"></small>
+                        <button type="button" id="submitForm" class="modal-form__btn">Отправить</button>
                     </form>
           </div>
         </div>
@@ -580,6 +581,7 @@
     <script src="assets/js/plugins/jquery.js"></script>
     <script src="assets/js/plugins/boostrap.js"></script>
     <script src="assets/js/plugins/foundation-datepicker.js"></script>
+    <script src="assets/js/form.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 </html>
