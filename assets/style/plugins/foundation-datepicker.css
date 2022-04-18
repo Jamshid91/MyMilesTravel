@@ -62,9 +62,6 @@
       background: #605DEC;
       color: #fff;
      }
-     .datepicker td:hover {
-       background-color: #C2CFE0;
-     }
     .datepicker td.old, .datepicker td.new {
       color: #999; }
     .datepicker td span.active {
