@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/Jamshid91/MyMilesTravel/issues"
   },
-  "homepage": "https://github.com/Jamshid91/MyMilesTravel#readme"
+  "homepage": "https://github.com/Jamshid91/MyMilesTravel#readme",
+  "dependencies": {
+  }
 }
