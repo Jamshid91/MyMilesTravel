@@ -1,15 +1,19 @@
-let openModalBtns = document.querySelectorAll('.openModal');
-let modalForm = document.querySelector('.modal-form');
-let modalFormItem = document.querySelector('.modal-form-item');
-let modalSucces = document.querySelector('.modal-succes');
-let btnClose = document.querySelector('.btn-close');
-let form = document.getElementById('form');
-let userName = document.getElementById('userName');
-let userEmail = document.getElementById('userEmail');
-let message = document.getElementById('message');
-let submitBtn = document.getElementById('submitForm');
-let error = document.querySelector('small.error');
-
+let openModalBtns = document.querySelectorAll('.openModal'),
+    modalForm = document.querySelector('.modal-form'),
+    modalFormItem = document.querySelector('.modal-form-item'),
+    modalSucces = document.querySelector('.modal-succes'),
+    btnClose = document.querySelector('.btn-close'),
+    form = document.getElementById('form'),
+    userName = document.getElementById('userName'),
+    userEmail = document.getElementById('userEmail'),
+    message = document.getElementById('message'),
+    submitBtn = document.getElementById('submitForm'),
+    error = document.querySelector('small.error'),
+    whereFlayVal = document.querySelector('.where-flay'),
+    whereFlayFromVal = document.querySelector('.where-flay-from'),
+    dateFly = document.getElementById('dateFly'),
+    passenger = document.querySelector('span.passenger'),
+    classFly = document.querySelector('span.class');
 
 openModalBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -24,14 +28,27 @@ btnClose.addEventListener('click', () => {
   modalForm.classList.add('d-none')
 });
 
+document.addEventListener('click', (e) => {
+  if(e.target === modalForm) {
+    modalForm.classList.add('d-none')
+  }
+})
+
 
 submitBtn.addEventListener('click', (e) => {
   checkInputs()
   if(error.innerHTML == '') {
     const values = {
-      name: userName.value.trim(),
-      email: userEmail.value.trim(),
-      message: message.value.trim()
+      name: userName.value,
+      email: userEmail.value,
+      message: message.value
+    }
+    const valuesPrice = {
+      'Откуда': whereFlayVal.innerHTML,
+      'Куда': whereFlayFromVal.innerHTML,
+      'Вылет': dateFly.value,
+      'Пассажир': passenger.innerHTML,
+      'Класс': classFly.innerHTML,
     }
 
     submitBtn.type = 'submit'
@@ -41,7 +58,7 @@ submitBtn.addEventListener('click', (e) => {
     modalForm.classList.add('d-none');
     modalSucces.classList.remove('d-none');
 
-    console.log(values)
+    console.log(values, valuesPrice)
   }
 });
 
