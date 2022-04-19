@@ -1,6 +1,8 @@
 let openModalBtns = document.querySelectorAll('.openModal');
 let modalForm = document.querySelector('.modal-form');
+let modalFormItem = document.querySelector('.modal-form-item');
 let modalSucces = document.querySelector('.modal-succes');
+let btnClose = document.querySelector('.btn-close');
 let form = document.getElementById('form');
 let userName = document.getElementById('userName');
 let userEmail = document.getElementById('userEmail');
@@ -18,10 +20,13 @@ openModalBtns.forEach(btn => {
   });
 });
 
+btnClose.addEventListener('click', () => {
+  modalForm.classList.add('d-none')
+});
+
 
 submitBtn.addEventListener('click', (e) => {
   checkInputs()
-  console.dir(userEmail)
   if(error.innerHTML == '') {
     const values = {
       name: userName.value.trim(),
@@ -45,7 +50,7 @@ submitBtn.addEventListener('click', (e) => {
 function removeModalSucces() {
   setTimeout(() => {
     modalSucces.classList.add('d-none');
-  }, 2000);
+  }, 2500);
 }
 
 
