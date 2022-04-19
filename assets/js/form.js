@@ -44,8 +44,8 @@ submitBtn.addEventListener('click', (e) => {
       message: message.value
     }
     const valuesPrice = {
-      'Откуда': whereFlayVal.innerHTML,
-      'Куда': whereFlayFromVal.innerHTML,
+      'Откуда': whereFlayVal.value,
+      'Куда': whereFlayFromVal.value,
       'Вылет': dateFly.value,
       'Пассажир': passenger.innerHTML,
       'Класс': classFly.innerHTML,
