@@ -79,7 +79,7 @@ a{color:inherit;text-decoration:none}
 .faq{padding:64px 0;background:rgba(239,238,252,.19);font-family:NunitoSans,sans-serif}
 .faq-item{background-color:#fff;padding:18px 24px;cursor:pointer;max-height:58px;overflow:hidden;-webkit-transition:.8s ease;-o-transition:.8s ease;transition:.8s ease}
 .faq-item:not(:last-child){margin-bottom:14px}
-.faq-item__title{color:#000;font-size:18px;font-weight:600}
+.faq-item__title{color:#000;font-size:18px;font-weight:600; width: 95%;}
 .faq-item__text{font-size:18px;font-weight:400;color:rgba(60,60,67,.85);line-height:25px}
 .faq-item svg{-webkit-transition:.5s all;-o-transition:.5s all;transition:.5s all}
 .faq .showFaq{max-height:500px}
@@ -159,6 +159,8 @@ top: 15px;}
 .modal-form .modal-form-item{width:100%}
 .modal-form .form{width:100%}
 .wrapper-info-sub .search{width:75%}
+.faq-item-title{height: 75px; display: flex; align-items: center;}
+.faq-item{max-height: 100px;}
 }
 @media (max-width:576px){
 .title__text{font-size:22px}
