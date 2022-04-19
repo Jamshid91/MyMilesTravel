@@ -16,6 +16,8 @@
     "url": "https://github.com/Jamshid91/MyMilesTravel/issues"
   },
   "homepage": "https://github.com/Jamshid91/MyMilesTravel#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^3.15.4"
   }
 }
